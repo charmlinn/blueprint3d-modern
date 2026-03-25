@@ -2,6 +2,8 @@
 
 A modern, open-source 3D floor planner built with **Three.js** and **TypeScript**. Blueprint3D Modern is a complete rewrite of the classic blueprint3d library as a clean ES module, paired with a production-ready **Next.js 15** demo application featuring local IndexedDB storage — no backend required.
 
+**[Live Demo →](https://blueprint3d-modern.vercel.app/)**
+
 ## Screenshots
 
 ![3D Floor Planner](./docs/screenshot-1.png)
