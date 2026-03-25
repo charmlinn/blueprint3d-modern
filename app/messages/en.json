@@ -1,0 +1,268 @@
+{
+  "BluePrint": {
+    "sidebar": {
+      "editFloorplan": "Edit Floorplan",
+      "design": "Design",
+      "edit": "Edit",
+      "projects": "Projects",
+      "addItems": "Add Items",
+      "myFloorplans": "My Floorplans",
+      "settings": "Settings",
+      "openSidebar": "Open sidebar",
+      "collapseSidebar": "Collapse sidebar"
+    },
+    "mainControls": {
+      "newPlan": "New Plan",
+      "savePlan": "Save Plan",
+      "downloadPlan": "Download Plan",
+      "loadPlan": "Load Plan"
+    },
+    "floorplanner": {
+      "moveWalls": "Move Walls",
+      "drawWalls": "Draw Walls",
+      "deleteWalls": "Delete Walls",
+      "done": "Done",
+      "escHint": "Press the \"Esc\" key to stop drawing walls"
+    },
+    "viewToggle": {
+      "3d": "3D",
+      "2d": "2D"
+    },
+    "textureSelector": {
+      "adjustFloor": "Adjust Floor",
+      "adjustWall": "Adjust Wall"
+    },
+    "myFloorplans": {
+      "title": "My Saved Floorplans",
+      "noFloorplans": "No saved floorplans yet",
+      "saveFirst": "Save your first floorplan to see it here",
+      "loading": "Loading...",
+      "loadButton": "Load",
+      "loadError": "Failed to load floorplan",
+      "loadNotFound": "Floorplan not found",
+      "deleteButton": "Delete",
+      "editButton": "Edit",
+      "deleteConfirm": "Are you sure you want to delete this floorplan?",
+      "deleteError": "Failed to delete floorplan",
+      "lastModified": "Last modified",
+      "loadingItem": "Loading \"{name}\"...",
+      "loadedSuccess": "\"{name}\" loaded successfully",
+      "deletingItem": "Deleting \"{name}\"...",
+      "deleteSuccess": "\"{name}\" deleted successfully",
+      "savedCount": "{count} saved {count, plural, =1 {floorplan} other {floorplans}}",
+      "filterAll": "All Rooms",
+      "gridView": "Grid View",
+      "listView": "List View",
+      "roomTypes": {
+        "bedroom": "Bedroom",
+        "living-room": "Living Room",
+        "kitchen": "Kitchen",
+        "bathroom": "Bathroom",
+        "office": "Office"
+      }
+    },
+    "settings": {
+      "title": "Settings",
+      "dimensionUnit": "Dimension Unit",
+      "language": "Language",
+      "languageDescription": "Select your preferred language",
+      "dimensionUnitDescription": "Select the unit system for displaying dimensions in the floorplan.",
+      "currentSelection": "Current selection",
+      "appliesTo": "This setting applies globally to:",
+      "applies2dFloorplan": "2D floorplan wall measurements",
+      "applies3dDimensions": "3D item dimensions",
+      "appliesAllDimensions": "All dimension displays",
+      "active": "Active",
+      "units": {
+        "inch": {
+          "label": "Imperial (ft/in)",
+          "description": "Feet and inches"
+        },
+        "m": {
+          "label": "Metric - Meters (m)",
+          "description": "Meters"
+        },
+        "cm": {
+          "label": "Metric - Centimeters (cm)",
+          "description": "Centimeters"
+        },
+        "mm": {
+          "label": "Metric - Millimeters (mm)",
+          "description": "Millimeters"
+        }
+      },
+      "languages": {
+        "en": "English",
+        "zh": "简体中文",
+        "tw": "繁體中文"
+      }
+    },
+    "items": {
+      "list": {
+        "itemCount": "{count} {count, plural, =1 {item} other {items}}",
+        "noItemsFound": "No items found",
+        "selectDifferentLayer": "Try selecting a different category"
+      },
+      "categories": {
+        "all": "All",
+        "bed": "Beds",
+        "drawer": "Drawers",
+        "wardrobe": "Wardrobes",
+        "light": "Lights",
+        "storage": "Storage",
+        "table": "Tables",
+        "chair": "Chairs",
+        "sofa": "Sofas",
+        "armchair": "Armchairs",
+        "stool": "Stools",
+        "door": "Doors",
+        "window": "Windows",
+        "toilet": "Toilets"
+      },
+      "loadingItem": "Loading \"{name}\"...",
+      "loadedSuccess": "\"{name}\" loaded successfully",
+      "loadError": "Failed to load \"{name}\"",
+      "bedOne": "Modern Upholstered Twin Bed",
+      "drawerOne": "Minimalist White Six-Drawer Dresser",
+      "drawerTwo": "Modern Eight Drawer Wooden Dresser",
+      "drawerThree": "Modern Dark Wood Nightstand",
+      "drawerFour": "Traditional White Vanity Dressing Table",
+      "drawerFive": "Minimalist Grey Vanity Desk",
+      "drawerSix": "Minimalist Oak Writing Desk",
+      "wardrobeOne": "Minimalist Three-Door White Wardrobe",
+      "wardrobeTwo": "Modern Modular Open Wardrobe System",
+      "wardrobeThree": "Minimalist White Two-Door Wardrobe",
+      "wardrobeFour": "Modern Open Concept Wardrobe Frame",
+      "lightOne": "Minimalist White Globe Table Lamp",
+      "lightTwo": "Modern Green Metal Floor Lamp",
+      "lightThree": "Modern Wooden Tripod Floor Lamp",
+      "lightFour": "Traditional Brass Table Lamp",
+      "storageOne": "Sage Green Wooden Display Cabinet",
+      "storageTwo": "Traditional Dark Wood Display Cabinet",
+      "storageThree": "Traditional White Wooden Sideboard",
+      "storageFour": "Traditional Dark Wood China Cabinet",
+      "storageFive": "Modern Black Glass Display Cabinet",
+      "storageSix": "Modern Black Two-Door Storage Cabinet",
+      "storageSeven": "Tall Narrow White Bookshelf",
+      "storageEight": "Modern Scandinavian Five-Tier Shelving Unit",
+      "storageNine": "Tall Black Storage Bookcase",
+      "storageTen": "Modern Eight-Cube Storage Shelf",
+      "storageEleven": "Industrial Galvanized Metal Shelving Unit",
+      "storageTwelve": "Modern Black Media Console",
+      "storageThirteen": "Minimalist Oak Media Console",
+      "storageFourteen": "Minimalist Black TV Stand",
+      "storageFifteen": "Minimalist Wall-Mounted Media Console",
+      "storageSixteen": "Industrial Metal Mesh Media Console",
+      "tableOne": "Traditional Black Wooden Dining Table",
+      "tableTwo": "Two-Tone Rectangular Dining Table",
+      "tableThree": "Round Gold Glass Coffee Table",
+      "tableFour": "Oval Wooden Coffee Table",
+      "tableFive": "Minimalist Round Metal Side Table",
+      "tableSix": "Modern C-Shaped Laptop Table",
+      "tableSeven": "Minimalist White Square Side Table",
+      "tableEight": "Minimalist Black Rectangular Dining Table",
+      "tableNine": "Modern White Pedestal Dining Table",
+      "tableTen": "Minimalist White Rectangular Dining Table",
+      "tableEleven": "Modern Wooden Tiered Side Table",
+      "tableTwelve": "Modern White Cube Storage Unit",
+      "tableThirteen": "Rustic Wooden Dining Table Set",
+      "tableFourteen": "Round Wooden Dining Table Set",
+      "tableFifteen": "Modern Rattan Dining Set",
+      "chairOne": "Minimalist Black Metal Dining Chair",
+      "chairTwo": "Modern Upholstered Dining Chair",
+      "chairThree": "Modern White Molded Armchair",
+      "chairFour": "Modern Perforated Metal Dining Chair",
+      "chairFive": "Modern Clear Acrylic Dining Chair",
+      "chairSix": "Modern Scandinavian Dining Chair",
+      "chairSeven": "Minimalist Light Wood Dining Chair",
+      "chairEight": "Traditional Dark Wood Dining Chair",
+      "chairNine": "Modern Black Metal Folding Chair",
+      "sofaTen": "Modern Minimalist Two-Seater Sofa",
+      "sofaEleven": "Mid-Century Modern Tufted Leather Sofa",
+      "sofaTwelve": "Modern Beige Sectional Sofa",
+      "sofaThirteen": "Modern Grey L-Shaped Sectional Sofa",
+      "sofaFourteen": "Classic White Slipcovered Sofa",
+      "armchairFifteen": "Mid-Century Modern Fabric Armchair",
+      "armchairSixteen": "Scandinavian Bentwood Armchair",
+      "armchairSeventeen": "Classic White Slipcovered Armchair",
+      "armchairEighteen": "Modern Tufted Fabric Armchair",
+      "armchairNineteen": "Mid-Century Modern Orange Corduroy Armchair",
+      "armchairTwenty": "Natural Wicker Rattan Armchair",
+      "stoolTwentyOne": "Modern Round Yellow Fabric Stool",
+      "stoolTwentyTwo": "Modern Grey Upholstered Ottoman Stool",
+      "stoolTwentyThree": "Modern Navy Fabric Ottoman Stool",
+      "stoolTwentyFour": "Tufted Fabric Ottoman Stool",
+      "stoolTwentyFive": "Modern Hexagonal Fabric Storage Stool",
+      "closedDoor": "Closed Door",
+      "openDoor": "Open Door",
+      "windowOne": "Modern White Casement Window",
+      "doorOne": "Minimalist White Interior Door",
+      "doorTwo": "Classic Six-Panel White Door",
+      "toiletOne": "Toilet",
+      "bathtubOne": "Bathtub",
+      "showerRoomOne": "Shower Room",
+      "showerHeadOne": "Shower Head",
+      "sinkOne": "Sink"
+    },
+    "contextMenu": {
+      "deleteItem": "Delete Item",
+      "adjustSize": "Adjust Size",
+      "width": "Width",
+      "depth": "Depth",
+      "height": "Height",
+      "lockInPlace": "Lock in place",
+      "measurementsIn": "Measurements in",
+      "units": {
+        "inches": "inches",
+        "meters": "meters",
+        "centimeters": "centimeters",
+        "millimeters": "millimeters"
+      }
+    },
+    "newDialog": {
+      "title": "New Floorplan",
+      "description": "Select the room type for your new floorplan.",
+      "roomTypeLabel": "Room Type",
+      "cancel": "Cancel",
+      "confirm": "Create"
+    },
+    "saveDialog": {
+      "title": "Save Floorplan",
+      "description": "Enter a name for your floorplan. You can find it later in 'My Floorplans'.",
+      "nameLabel": "Floorplan Name",
+      "namePlaceholder": "e.g., Living Room Design",
+      "cancel": "Cancel",
+      "save": "Save",
+      "saving": "Saving floorplan...",
+      "saveSuccess": "Floorplan saved successfully!",
+      "saveError": "Failed to save floorplan. Please try again.",
+      "roomTypeLabel": "Room Type",
+      "openSidebar": "Open sidebar"
+    },
+    "bedSizeInput": {
+      "title": "Bed Size",
+      "bedDimensions": "Bed Dimensions",
+      "width": "Width",
+      "length": "Length",
+      "measurementsIn": "Measurements in",
+      "units": {
+        "inches": "inches",
+        "meters": "meters",
+        "centimeters": "centimeters",
+        "millimeters": "millimeters"
+      }
+    },
+    "Component": {
+      "FloorPlanDesign": {
+        "TemplateSelector": {
+          "title": "Choose a Template",
+          "description": "Start with a template or a blank canvas",
+          "blank": "Blank Canvas",
+          "blankDescription": "Start with an empty room",
+          "useTemplate": "Use Template",
+          "selectRoomType": "Select Room Type"
+        }
+      }
+    }
+  }
+}

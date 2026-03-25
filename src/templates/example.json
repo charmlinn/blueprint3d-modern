@@ -1,0 +1,318 @@
+{
+    "floorplan": {
+      "corners": {
+        "56d9ebd1-91b2-875c-799d-54b3785fca1f": { "x": 630.555, "y": -227.5840000000001 },
+        "8f4a050d-e102-3c3f-5af9-3d9133555d76": { "x": 294.64, "y": -227.5840000000001 },
+        "4e312eca-6c4f-30d1-3d9a-a19a9d1ee359": { "x": 294.64, "y": 232.664 },
+        "254656bf-8a53-3987-c810-66b349f49b19": { "x": 745.7439999999998, "y": 232.664 },
+        "11d25193-4411-fbbf-78cb-ae7c0283164b": { "x": 1044.7019999999998, "y": 232.664 },
+        "edf0de13-df9f-cd6a-7d11-9bd13c36ce12": { "x": 1044.7019999999998, "y": -105.664 },
+        "e7db8654-efe1-bda2-099a-70585874d8c0": { "x": 745.7439999999998, "y": -105.664 }
+      },
+      "walls": [
+        {
+          "corner1": "4e312eca-6c4f-30d1-3d9a-a19a9d1ee359",
+          "corner2": "254656bf-8a53-3987-c810-66b349f49b19",
+          "frontTexture": { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 },
+          "backTexture": {
+            "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap_yellow.png",
+            "stretch": true,
+            "scale": null
+          }
+        },
+        {
+          "corner1": "254656bf-8a53-3987-c810-66b349f49b19",
+          "corner2": "e7db8654-efe1-bda2-099a-70585874d8c0",
+          "frontTexture": { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 },
+          "backTexture": {
+            "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap_yellow.png",
+            "stretch": true,
+            "scale": null
+          }
+        },
+        {
+          "corner1": "56d9ebd1-91b2-875c-799d-54b3785fca1f",
+          "corner2": "8f4a050d-e102-3c3f-5af9-3d9133555d76",
+          "frontTexture": { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 },
+          "backTexture": {
+            "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap_yellow.png",
+            "stretch": true,
+            "scale": null
+          }
+        },
+        {
+          "corner1": "8f4a050d-e102-3c3f-5af9-3d9133555d76",
+          "corner2": "4e312eca-6c4f-30d1-3d9a-a19a9d1ee359",
+          "frontTexture": { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 },
+          "backTexture": {
+            "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap_yellow.png",
+            "stretch": true,
+            "scale": null
+          }
+        },
+        {
+          "corner1": "254656bf-8a53-3987-c810-66b349f49b19",
+          "corner2": "11d25193-4411-fbbf-78cb-ae7c0283164b",
+          "frontTexture": { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 },
+          "backTexture": { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 }
+        },
+        {
+          "corner1": "11d25193-4411-fbbf-78cb-ae7c0283164b",
+          "corner2": "edf0de13-df9f-cd6a-7d11-9bd13c36ce12",
+          "frontTexture": { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 },
+          "backTexture": { "url": "https://cdn-images.lumenfeng.com/models-cover/light_brick.jpg", "stretch": false, "scale": 100 }
+        },
+        {
+          "corner1": "edf0de13-df9f-cd6a-7d11-9bd13c36ce12",
+          "corner2": "e7db8654-efe1-bda2-099a-70585874d8c0",
+          "frontTexture": { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 },
+          "backTexture": { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 }
+        },
+        {
+          "corner1": "e7db8654-efe1-bda2-099a-70585874d8c0",
+          "corner2": "56d9ebd1-91b2-875c-799d-54b3785fca1f",
+          "frontTexture": { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 },
+          "backTexture": {
+            "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap_yellow.png",
+            "stretch": true,
+            "scale": null
+          }
+        }
+      ],
+      "wallTextures": [],
+      "floorTextures": {},
+      "newFloorTextures": {
+        "11d25193-4411-fbbf-78cb-ae7c0283164b,254656bf-8a53-3987-c810-66b349f49b19,e7db8654-efe1-bda2-099a-70585874d8c0,edf0de13-df9f-cd6a-7d11-9bd13c36ce12": {
+          "url": "https://cdn-images.lumenfeng.com/models-cover/light_fine_wood.jpg",
+          "scale": 300
+        }
+      }
+    },
+    "items": [
+      {
+        "item_name": "Closed Door",
+        "item_type": 7,
+        "model_url": "https://cdn-images.lumenfeng.com/door-1.glb",
+        "xpos": 513.1545453057599,
+        "ypos": 110.51,
+        "zpos": 232.16400000000002,
+        "rotation": -3.141592653589793,
+        "scale_x": 1,
+        "scale_y": 1,
+        "scale_z": 1,
+        "fixed": false,
+        "resizable": true
+      },
+      {
+        "item_name": "Sofa - Fourteen",
+        "item_type": 1,
+        "model_url": "https://cdn-images.lumenfeng.com/uploads/sofa-14.glb",
+        "xpos": 349.90152005225315,
+        "ypos": 45.5919189453125,
+        "zpos": -40.55726466225336,
+        "rotation": 1.5707963267948966,
+        "scale_x": 1,
+        "scale_y": 1,
+        "scale_z": 1,
+        "fixed": false,
+        "resizable": true
+      },
+      {
+        "item_name": "Light - Four",
+        "item_type": 1,
+        "model_url": "https://cdn-images.lumenfeng.com/uploads/light-4.glb",
+        "xpos": 768.5995841256359,
+        "ypos": 50,
+        "zpos": -65.11338340280254,
+        "rotation": 1.1826429394493791,
+        "scale_x": 1.0002070675196857,
+        "scale_y": 1.8507382012827454,
+        "scale_z": 0.9978440001625005,
+        "fixed": false,
+        "resizable": true
+      },
+      {
+        "item_name": "Light - Three",
+        "item_type": 1,
+        "model_url": "https://cdn-images.lumenfeng.com/uploads/light-3.glb",
+        "xpos": 341.6288576982965,
+        "ypos": 71.75104522705078,
+        "zpos": -183.36200824879543,
+        "rotation": 0,
+        "scale_x": 1,
+        "scale_y": 1,
+        "scale_z": 1,
+        "fixed": false,
+        "resizable": true
+      },
+      {
+        "item_name": "Table - Four",
+        "item_type": 1,
+        "model_url": "https://cdn-images.lumenfeng.com/uploads/table-4.glb",
+        "xpos": 453.43151802619184,
+        "ypos": 20.086519241333008,
+        "zpos": -39.91500251678675,
+        "rotation": 1.5707963267948966,
+        "scale_x": 1,
+        "scale_y": 1,
+        "scale_z": 1,
+        "fixed": false,
+        "resizable": true
+      },
+      {
+        "item_name": "Armchair - Nineteen",
+        "item_type": 1,
+        "model_url": "https://cdn-images.lumenfeng.com/uploads/armchair-19.glb",
+        "xpos": 843.504927801446,
+        "ypos": 33.99931335449219,
+        "zpos": 158.55889237226097,
+        "rotation": 0,
+        "scale_x": 1,
+        "scale_y": 1,
+        "scale_z": 1,
+        "fixed": false,
+        "resizable": true
+      },
+      {
+        "item_name": "Armchair - Eighteen",
+        "item_type": 1,
+        "model_url": "https://cdn-images.lumenfeng.com/uploads/armchair-18.glb",
+        "xpos": 369.42381129295563,
+        "ypos": 38.2242546081543,
+        "zpos": 154.39443069624778,
+        "rotation": 2.2978252683249014,
+        "scale_x": 1,
+        "scale_y": 1,
+        "scale_z": 1,
+        "fixed": false,
+        "resizable": true
+      },
+      {
+        "item_name": "Bed - One",
+        "item_type": 1,
+        "model_url": "https://cdn-images.lumenfeng.com/uploads/bed-1.glb",
+        "xpos": 929.1266875938562,
+        "ypos": 43.18,
+        "zpos": -23.733474419282814,
+        "rotation": -1.5707963267948966,
+        "scale_x": 1.446708530723308,
+        "scale_y": 1.013572764555239,
+        "scale_z": 1.0053007751133713,
+        "fixed": false,
+        "resizable": true
+      },
+      {
+        "item_name": "Window",
+        "item_type": 3,
+        "model_url": "https://cdn-images.lumenfeng.com/window-1.glb",
+        "xpos": 910.9876865272064,
+        "ypos": 116.18187258064359,
+        "zpos": -105.164,
+        "rotation": 0,
+        "scale_x": 1,
+        "scale_y": 1,
+        "scale_z": 1,
+        "fixed": false,
+        "resizable": true
+      },
+      {
+        "item_name": "Drawer - Three",
+        "item_type": 1,
+        "model_url": "https://cdn-images.lumenfeng.com/uploads/drawer-3.glb",
+        "xpos": 1001.7583428899142,
+        "ypos": 26.375194549560547,
+        "zpos": 91.33437400071506,
+        "rotation": -1.5707963267948966,
+        "scale_x": 1,
+        "scale_y": 1,
+        "scale_z": 1,
+        "fixed": false,
+        "resizable": true
+      },
+      {
+        "item_name": "Drawer - Six",
+        "item_type": 1,
+        "model_url": "https://cdn-images.lumenfeng.com/uploads/drawer-6.glb",
+        "xpos": 841.9218957703033,
+        "ypos": 37.5,
+        "zpos": 193.4768824891461,
+        "rotation": 3.141592653589793,
+        "scale_x": 1.332897278071464,
+        "scale_y": 0.9999781295473376,
+        "scale_z": 0.9997798133040565,
+        "fixed": false,
+        "resizable": true
+      },
+      {
+        "item_name": "Open Door",
+        "item_type": 7,
+        "model_url": "https://cdn-images.lumenfeng.com/door-2.glb",
+        "xpos": 745.2439999999998,
+        "ypos": 110.51,
+        "zpos": 94.6532468139937,
+        "rotation": -1.5707963267948966,
+        "scale_x": 1,
+        "scale_y": 1,
+        "scale_z": 1,
+        "fixed": false,
+        "resizable": true
+      },
+      {
+        "item_name": "Wardrobe - One",
+        "item_type": 1,
+        "model_url": "https://cdn-images.lumenfeng.com/uploads/wardrobe-1.glb",
+        "xpos": 658.8804462256563,
+        "ypos": 88.11734771728516,
+        "zpos": 188.66344399634278,
+        "rotation": 3.141592653589793,
+        "scale_x": 1,
+        "scale_y": 1,
+        "scale_z": 1,
+        "fixed": false,
+        "resizable": true
+      },
+      {
+        "item_name": "Storage - Thirteen",
+        "item_type": 1,
+        "model_url": "https://cdn-images.lumenfeng.com/uploads/storage-13.glb",
+        "xpos": 656.2518503561639,
+        "ypos": 27.997774124145508,
+        "zpos": -134.44089064035632,
+        "rotation": -0.8047802757442067,
+        "scale_x": 1,
+        "scale_y": 1,
+        "scale_z": 1,
+        "fixed": false,
+        "resizable": true
+      },
+      {
+        "item_name": "Window",
+        "item_type": 3,
+        "model_url": "https://cdn-images.lumenfeng.com/window-1.glb",
+        "xpos": 406.8201844480738,
+        "ypos": 124.87574731825151,
+        "zpos": -227.0840000000001,
+        "rotation": 0,
+        "scale_x": 1,
+        "scale_y": 1,
+        "scale_z": 1,
+        "fixed": false,
+        "resizable": true
+      },
+      {
+        "item_name": "Window",
+        "item_type": 3,
+        "model_url": "https://cdn-images.lumenfeng.com/window-1.glb",
+        "xpos": 515.8702566801112,
+        "ypos": 124.02169410769187,
+        "zpos": -227.0840000000001,
+        "rotation": 0,
+        "scale_x": 1,
+        "scale_y": 1,
+        "scale_z": 1,
+        "fixed": false,
+        "resizable": true
+      }
+    ]
+  }
+  

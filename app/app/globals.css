@@ -1,0 +1,362 @@
+/* ------------------------------------------------------------------
+   Tailwind + Design System
+------------------------------------------------------------------ */
+@import 'tailwindcss';
+
+@source "../**/*.{js,ts,jsx,tsx}";
+
+/* @plugin "tailwindcss-animate"; */
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  button:not([disabled]),
+  [role='button']:not([disabled]) {
+    cursor: pointer;
+  }
+}
+
+@theme {
+  --font-global: var(--font-inter);
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-50: color-mix(in srgb, hsl(var(--primary)) 8%, white);
+  --color-primary-100: color-mix(in srgb, hsl(var(--primary)) 15%, white);
+  --color-primary-200: color-mix(in srgb, hsl(var(--primary)) 25%, white);
+  --color-primary-300: color-mix(in srgb, hsl(var(--primary)) 40%, white);
+  --color-primary-400: color-mix(in srgb, hsl(var(--primary)) 80%, white);
+  --color-primary-500: hsl(var(--primary));
+  --color-primary-600: color-mix(in srgb, hsl(var(--primary)) 60%, black);
+  --color-primary-700: color-mix(in srgb, hsl(var(--primary)) 40%, black);
+  --color-primary-800: color-mix(in srgb, hsl(var(--primary)) 55%, black);
+  --color-primary-900: color-mix(in srgb, hsl(var(--primary)) 40%, black);
+  --color-primary-950: color-mix(in srgb, hsl(var(--primary)) 25%, black);
+  --color-gradient: hsl(var(--gradient));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-warning: hsl(var(--warning));
+  --color-warning-foreground: hsl(var(--warning-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  /* Sidebar */
+  --color-sidebar: hsl(var(--sidebar-background));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from { height: 0; }
+    to { height: var(--radix-accordion-content-height); }
+  }
+  @keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height); }
+    to { height: 0; }
+  }
+}
+
+/* ------------------------------------------------------------------
+   Base layer: atomic color values & base styles
+------------------------------------------------------------------ */
+@layer base {
+  :root {
+    /* ===== Brand Primary (Modern Blue) ===== */
+    --primary: 217 72% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    /* ===== Base surfaces ===== */
+    --background: 214 10% 97%;
+    --foreground: 217 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 217 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 217 20% 15%;
+
+    /* ===== Sidebar ===== */
+    --sidebar-background: 214 15% 97%;
+    --sidebar-foreground: var(--foreground);
+    --sidebar-primary: var(--primary);
+    --sidebar-primary-foreground: var(--primary-foreground);
+    --sidebar-accent: 217 10% 92%;
+    --sidebar-accent-foreground: var(--foreground);
+    --sidebar-border: 214 10% 90%;
+    --sidebar-ring: var(--ring);
+
+    /* ===== Functional colors ===== */
+    --secondary: 214 10% 94%;
+    --secondary-foreground: 217 30% 20%;
+
+    --muted: 214 10% 94%;
+    --muted-foreground: 217 10% 50%;
+
+    --accent: 0 0% 0% / 10%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --warning: 35 80% 50%;
+    --warning-foreground: 35 80% 10%;
+
+    --border: 214 15% 90%;
+    --input: 214 15% 90%;
+    --ring: 217 72% 45%;
+    --gradient: 200 40% 75%;
+
+    /* ===== Charts (blue palette) ===== */
+    --chart-1: 217 72% 45%;
+    --chart-2: 199 60% 45%;
+    --chart-3: 214 30% 60%;
+    --chart-4: 231 50% 55%;
+    --chart-5: 217 10% 30%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* ===== Brand Primary (brightened for dark bg) ===== */
+    --primary: 217 72% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    /* ===== Base surfaces ===== */
+    --background: 217 15% 8%;
+    --foreground: 214 10% 90%;
+
+    --card: 217 12% 12%;
+    --card-foreground: 214 10% 90%;
+
+    --popover: 217 12% 12%;
+    --popover-foreground: 214 10% 90%;
+
+    /* ===== Sidebar ===== */
+    --sidebar-background: 217 15% 10%;
+    --sidebar-foreground: var(--foreground);
+    --sidebar-primary: var(--primary);
+    --sidebar-primary-foreground: var(--primary-foreground);
+    --sidebar-accent: 217 15% 18%;
+    --sidebar-accent-foreground: var(--foreground);
+    --sidebar-border: 214 10% 20%;
+    --sidebar-ring: var(--ring);
+
+    /* ===== Functional colors ===== */
+    --secondary: 214 10% 20%;
+    --secondary-foreground: 214 10% 90%;
+
+    --muted: 214 10% 20%;
+    --muted-foreground: 217 10% 60%;
+
+    --accent: 0 0% 100% / 10%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --warning: 35 80% 55%;
+    --warning-foreground: 35 80% 10%;
+
+    --border: 214 10% 20%;
+    --input: 214 10% 20%;
+    --ring: 217 72% 55%;
+    --gradient: 200 40% 35%;
+
+    /* ===== Charts (adjusted for dark) ===== */
+    --chart-1: 217 72% 55%;
+    --chart-2: 199 60% 50%;
+    --chart-3: 214 30% 50%;
+    --chart-4: 231 50% 60%;
+    --chart-5: 217 10% 70%;
+  }
+
+  /* Tailwind v3→v4 border color compat */
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-global;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Utilities
+------------------------------------------------------------------ */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes shine {
+  0% { background-position: 100%; }
+  100% { background-position: -100%; }
+}
+.animate-shine {
+  animation: shine 5s ease-in-out infinite;
+}
+
+/* CTA gradient button */
+.gradient-background {
+  background: radial-gradient(
+    141.42% 141.42% at 0% 100%,
+    hsl(var(--gradient)) 0%,
+    hsl(var(--chart-2)) 36%,
+    hsl(var(--primary)) 62.29%,
+    color-mix(in srgb, hsl(var(--primary)), black 25%) 100%
+  );
+  background-size: 100% 100%;
+  position: relative;
+  z-index: 1;
+  border: none;
+  color: white;
+}
+
+.gradient-background:before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(
+    141.42% 141.42% at 0% 100%,
+    color-mix(in srgb, hsl(var(--primary)), black 25%) 0%,
+    hsl(var(--primary)) 36%,
+    hsl(var(--chart-2)) 62.29%,
+    hsl(var(--gradient)) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.gradient-background:hover:before {
+  opacity: 1;
+}
+
+/* ------------------------------------------------------------------
+   Scrollbar utilities
+------------------------------------------------------------------ */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: var(--radius);
+}
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(0 0% 50%);
+  border-color: hsl(0 0% 7%);
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-muted-foreground) var(--color-secondary);
+}
+
+/* ------------------------------------------------------------------
+   Loading Modal
+------------------------------------------------------------------ */
+@keyframes loadingDots {
+  0%, 20% { opacity: 0; }
+  40% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes fadeInBackdrop {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#loading-modal {
+  @apply absolute z-10 left-0 top-0 w-full h-full flex items-center justify-center;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(2px);
+  animation: fadeInBackdrop 0.2s ease-out;
+}
+
+#loading-modal .loading-content {
+  @apply flex items-center gap-2 px-4 py-2 rounded-lg;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#loading-modal p {
+  @apply text-foreground text-sm font-medium m-0 flex items-center gap-1;
+}
+
+#loading-modal .loading-dots {
+  display: inline-flex;
+  gap: 3px;
+  margin-left: 2px;
+}
+
+#loading-modal .loading-dots span {
+  @apply w-1.5 h-1.5 rounded-full;
+  background-color: hsl(var(--primary));
+  animation: loadingDots 1.4s infinite;
+}
+
+#loading-modal .loading-dots span:nth-child(1) { animation-delay: 0s; }
+#loading-modal .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+#loading-modal .loading-dots span:nth-child(3) { animation-delay: 0.4s; }

@@ -1,0 +1,268 @@
+{
+  "BluePrint": {
+    "sidebar": {
+      "editFloorplan": "编辑平面图",
+      "design": "设计",
+      "edit": "编辑",
+      "projects": "项目",
+      "addItems": "添加物品",
+      "myFloorplans": "我的平面图",
+      "settings": "设置",
+      "openSidebar": "打开侧边栏",
+      "collapseSidebar": "折叠侧边栏"
+    },
+    "mainControls": {
+      "newPlan": "新建方案",
+      "savePlan": "保存方案",
+      "downloadPlan": "下载方案",
+      "loadPlan": "加载方案"
+    },
+    "floorplanner": {
+      "moveWalls": "移动墙体",
+      "drawWalls": "绘制墙体",
+      "deleteWalls": "删除墙体",
+      "done": "完成",
+      "escHint": "按\"Esc\"键停止绘制墙体"
+    },
+    "viewToggle": {
+      "3d": "3D",
+      "2d": "2D"
+    },
+    "textureSelector": {
+      "adjustFloor": "调整地板",
+      "adjustWall": "调整墙面"
+    },
+    "myFloorplans": {
+      "title": "我保存的平面图",
+      "noFloorplans": "暂无已保存的平面图",
+      "saveFirst": "保存您的第一个平面图即可在此查看",
+      "loading": "加载中...",
+      "loadButton": "加载",
+      "loadError": "平面图加载失败",
+      "loadNotFound": "未找到平面图",
+      "deleteButton": "删除",
+      "editButton": "编辑",
+      "deleteConfirm": "您确定要删除此平面图吗？",
+      "deleteError": "删除平面图失败",
+      "lastModified": "上次修改",
+      "loadingItem": "正在加载\"{name}\"...",
+      "loadedSuccess": "\"{name}\"加载成功",
+      "deletingItem": "正在删除\"{name}\"...",
+      "deleteSuccess": "\"{name}\"删除成功",
+      "savedCount": "已保存 {count} 个平面图",
+      "filterAll": "所有房间",
+      "gridView": "网格视图",
+      "listView": "列表视图",
+      "roomTypes": {
+        "bedroom": "卧室",
+        "living-room": "客厅",
+        "kitchen": "厨房",
+        "bathroom": "卫生间",
+        "office": "办公室"
+      }
+    },
+    "settings": {
+      "title": "设置",
+      "dimensionUnit": "尺寸单位",
+      "language": "语言",
+      "languageDescription": "选择您的首选语言",
+      "dimensionUnitDescription": "选择用于在平面图中显示尺寸的单位系统。",
+      "currentSelection": "当前选择",
+      "appliesTo": "此设置全局应用于：",
+      "applies2dFloorplan": "2D平面图墙体测量",
+      "applies3dDimensions": "3D物品尺寸",
+      "appliesAllDimensions": "所有尺寸显示",
+      "active": "启用",
+      "units": {
+        "inch": {
+          "label": "英制（英尺/英寸）",
+          "description": "英尺和英寸"
+        },
+        "m": {
+          "label": "公制 - 米 (m)",
+          "description": "米"
+        },
+        "cm": {
+          "label": "公制 - 厘米 (cm)",
+          "description": "厘米"
+        },
+        "mm": {
+          "label": "公制 - 毫米 (mm)",
+          "description": "毫米"
+        }
+      },
+      "languages": {
+        "en": "英语",
+        "zh": "简体中文",
+        "tw": "繁體中文"
+      }
+    },
+    "items": {
+      "list": {
+        "itemCount": "{count} 个物品",
+        "noItemsFound": "未找到物品",
+        "selectDifferentLayer": "尝试选择不同类别"
+      },
+      "categories": {
+        "all": "全部",
+        "bed": "床",
+        "drawer": "抽屉",
+        "wardrobe": "衣柜",
+        "light": "灯具",
+        "storage": "储物",
+        "table": "桌子",
+        "chair": "椅子",
+        "sofa": "沙发",
+        "armchair": "扶手椅",
+        "stool": "凳子",
+        "door": "门",
+        "window": "窗户",
+        "toilet": "马桶"
+      },
+      "loadingItem": "正在加载\"{name}\"...",
+      "loadedSuccess": "\"{name}\"加载成功",
+      "loadError": "加载\"{name}\"失败",
+      "bedOne": "现代软包双人床",
+      "drawerOne": "简约白色六抽屉斗柜",
+      "drawerTwo": "现代木质八抽屉斗柜",
+      "drawerThree": "现代深色木质床头柜",
+      "drawerFour": "传统白色梳妆台",
+      "drawerFive": "简约灰色梳妆桌",
+      "drawerSix": "简约橡木写字台",
+      "wardrobeOne": "简约白色三门衣柜",
+      "wardrobeTwo": "现代模块化开放式衣柜系统",
+      "wardrobeThree": "简约白色双门衣柜",
+      "wardrobeFour": "现代开放式衣柜架",
+      "lightOne": "简约白色圆球台灯",
+      "lightTwo": "现代绿色金属落地灯",
+      "lightThree": "现代木质三脚架落地灯",
+      "lightFour": "传统黄铜台灯",
+      "storageOne": "鼠尾草绿木质展示柜",
+      "storageTwo": "传统深色木质展示柜",
+      "storageThree": "传统白色木质餐边柜",
+      "storageFour": "传统深色木质餐具柜",
+      "storageFive": "现代黑色玻璃展示柜",
+      "storageSix": "现代黑色双门储物柜",
+      "storageSeven": "高窄款白色书架",
+      "storageEight": "现代北欧风五层搁板架",
+      "storageNine": "黑色高款储物书柜",
+      "storageTen": "现代八格储物架",
+      "storageEleven": "工业风镀锌金属搁板架",
+      "storageTwelve": "现代黑色多媒体柜",
+      "storageThirteen": "简约橡木多媒体柜",
+      "storageFourteen": "简约黑色电视柜",
+      "storageFifteen": "简约壁挂式多媒体柜",
+      "storageSixteen": "工业风金属网格多媒体柜",
+      "tableOne": "传统黑色木质餐桌",
+      "tableTwo": "双色长方形餐桌",
+      "tableThree": "圆形金色玻璃茶几",
+      "tableFour": "椭圆形木质茶几",
+      "tableFive": "简约圆形金属边几",
+      "tableSix": "现代 C 型电脑桌",
+      "tableSeven": "简约白色方形边几",
+      "tableEight": "简约黑色长方形餐桌",
+      "tableNine": "现代白色底座式餐桌",
+      "tableTen": "简约白色长方形餐桌",
+      "tableEleven": "现代木质多层边几",
+      "tableTwelve": "现代白色方格储物柜",
+      "tableThirteen": "乡村风木质餐桌组合",
+      "tableFourteen": "圆形木质餐桌组合",
+      "tableFifteen": "现代藤编用餐组合",
+      "chairOne": "简约黑色金属餐椅",
+      "chairTwo": "现代软包餐椅",
+      "chairThree": "现代白色模压扶手椅",
+      "chairFour": "现代冲孔金属餐椅",
+      "chairFive": "现代透明亚克力餐椅",
+      "chairSix": "现代北欧风餐椅",
+      "chairSeven": "简约浅木色餐椅",
+      "chairEight": "传统深木色餐椅",
+      "chairNine": "现代黑色金属折叠椅",
+      "sofaTen": "现代简约双人沙发",
+      "sofaEleven": "中古现代风拉扣皮沙发",
+      "sofaTwelve": "现代米色组合沙发",
+      "sofaThirteen": "现代灰色 L 型组合沙发",
+      "sofaFourteen": "经典白色布艺沙发罩沙发",
+      "armchairFifteen": "中古现代风织物扶手椅",
+      "armchairSixteen": "北欧风弯曲木扶手椅",
+      "armchairSeventeen": "经典白色布艺扶手椅",
+      "armchairEighteen": "现代拉扣织物扶手椅",
+      "armchairNineteen": "中古现代风橙色灯芯绒扶手椅",
+      "armchairTwenty": "天然柳条藤编扶手椅",
+      "stoolTwentyOne": "现代圆形黄色织物凳",
+      "stoolTwentyTwo": "现代灰色软包奥斯曼软凳",
+      "stoolTwentyThree": "现代海军蓝织物奥斯曼软凳",
+      "stoolTwentyFour": "拉扣织物奥斯曼软凳",
+      "stoolTwentyFive": "现代六边形织物储物凳",
+      "closedDoor": "关闭的门",
+      "openDoor": "打开的门",
+      "windowOne": "现代白色平开窗",
+      "doorOne": "简约白色室内门",
+      "doorTwo": "经典六板白色门",
+      "toiletOne": "马桶",
+      "bathtubOne": "浴缸",
+      "showerRoomOne": "淋浴房",
+      "showerHeadOne": "花洒",
+      "sinkOne": "洗手池"
+    },
+    "contextMenu": {
+      "deleteItem": "删除物品",
+      "adjustSize": "调整大小",
+      "width": "宽度",
+      "depth": "深度",
+      "height": "高度",
+      "lockInPlace": "锁定位置",
+      "measurementsIn": "测量单位",
+      "units": {
+        "inches": "英寸",
+        "meters": "米",
+        "centimeters": "厘米",
+        "millimeters": "毫米"
+      }
+    },
+    "newDialog": {
+      "title": "新建平面图",
+      "description": "请选择新平面图的房间类型。",
+      "roomTypeLabel": "房间类型",
+      "cancel": "取消",
+      "confirm": "创建"
+    },
+    "saveDialog": {
+      "title": "保存平面图",
+      "description": "请为您的平面图输入一个名称。您可以在\"我的平面图\"中找到它。",
+      "nameLabel": "平面图名称",
+      "namePlaceholder": "例如：客厅设计",
+      "cancel": "取消",
+      "save": "保存",
+      "saving": "正在保存平面图...",
+      "saveSuccess": "平面图保存成功！",
+      "saveError": "平面图保存失败。请重试。",
+      "roomTypeLabel": "房间类型",
+      "openSidebar": "打开侧边栏"
+    },
+    "bedSizeInput": {
+      "title": "床尺寸",
+      "bedDimensions": "床铺尺寸",
+      "width": "宽度",
+      "length": "长度",
+      "measurementsIn": "测量单位",
+      "units": {
+        "inches": "英寸",
+        "meters": "米",
+        "centimeters": "厘米",
+        "millimeters": "毫米"
+      }
+    },
+    "Component": {
+      "FloorPlanDesign": {
+        "TemplateSelector": {
+          "title": "选择模板",
+          "description": "从模板或空白画布开始",
+          "blank": "空白画布",
+          "blankDescription": "从空房间开始",
+          "useTemplate": "使用模板",
+          "selectRoomType": "选择房间类型"
+        }
+      }
+    }
+  }
+}

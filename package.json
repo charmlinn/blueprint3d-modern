@@ -1,0 +1,29 @@
+{
+  "name": "blueprint3d-modern",
+  "version": "0.1.0",
+  "description": "A modern 3D floor planner library built with Three.js, featuring a Next.js demo application",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "cd app && pnpm dev",
+    "dev:nextjs": "cd app && next dev --turbopack",
+    "build": "pnpm install && cd app && pnpm install && pnpm run build",
+    "build:nextjs": "cd app && next build",
+    "start": "cd app && next start",
+    "start:nextjs": "cd app && next start",
+    "ts": "tsc --noEmit"
+  },
+  "dependencies": {
+    "animejs": "^4.3.6",
+    "three": "^0.181.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.181.0",
+    "typescript": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/blueprint3d-modern.git"
+  },
+  "author": ""
+}
