@@ -119,6 +119,10 @@ export class Floorplan {
     this.updated_rooms.add(callback)
   }
 
+  public removeOnUpdatedRooms(callback: () => void): void {
+    this.updated_rooms.remove(callback)
+  }
+
   /**
    * Creates a new wall.
    * @param start The start corner.

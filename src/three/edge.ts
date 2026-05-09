@@ -2,8 +2,23 @@ import * as THREE from 'three'
 import { Utils } from '../core/utils'
 import type { HalfEdge } from '../model/half_edge'
 import type { Controls } from './controls'
+import type { Scene3DTheme } from './scene_theme'
 
 export class Edge {
+  static themeWallColor = 0xffffff
+  static themeWallEmissive = 0xffffff
+  static themeWallEmissiveIntensity = 0.3
+  static themeFillerColor = 0xffffff
+  static themeSideColor = 0xeeeeee
+
+  static setTheme(theme: Scene3DTheme): void {
+    Edge.themeWallColor = theme.wallColor
+    Edge.themeWallEmissive = theme.wallEmissive
+    Edge.themeWallEmissiveIntensity = theme.wallEmissiveIntensity
+    Edge.themeFillerColor = theme.wallFillerColor
+    Edge.themeSideColor = theme.wallSideColor
+  }
+
   private readonly scene: THREE.Scene
   private readonly edge: HalfEdge
   private readonly controls: Controls
@@ -11,15 +26,11 @@ export class Edge {
   private readonly wall
   private readonly front: boolean
   private planes: THREE.Mesh[] = []
-  private basePlanes: THREE.Mesh[] = [] // always visible
+  private basePlanes: THREE.Mesh[] = []
   private texture: THREE.Texture | null = null
   private currentTextureUrl: string = ''
   private readonly textureLoader = new THREE.TextureLoader()
   private readonly lightMap: THREE.Texture
-  // Brightened colors for Three.js r181
-  private readonly fillerColor = 0xffffff
-  private readonly sideColor = 0xeeeeee
-  private readonly baseColor = 0xffffff
 
   public visible = false
 
@@ -162,19 +173,18 @@ export class Edge {
   }
 
   private updatePlanes(): void {
-    // Switched to MeshLambertMaterial for proper lighting interaction
     const wallMaterial = new THREE.MeshLambertMaterial({
-      color: 0xffffff,
+      color: Edge.themeWallColor,
       side: THREE.FrontSide,
       map: this.texture,
-      emissive: 0xffffff,       // Keeps walls bright
-      emissiveIntensity: 0.3    // While showing depth from lighting
+      emissive: Edge.themeWallEmissive,
+      emissiveIntensity: Edge.themeWallEmissiveIntensity,
     })
 
     const fillerMaterial = new THREE.MeshBasicMaterial({
-      color: this.fillerColor,
+      color: Edge.themeFillerColor,
       side: THREE.DoubleSide,
-      toneMapped: false
+      toneMapped: false,
     })
 
     // exterior plane
@@ -199,22 +209,18 @@ export class Edge {
       )
     )
 
-    // bottom
-    // put into basePlanes since this is always visible
-    this.basePlanes.push(this.buildFiller(this.edge, 0, THREE.BackSide, this.baseColor))
+    this.basePlanes.push(this.buildFiller(this.edge, 0, THREE.BackSide, Edge.themeFillerColor))
 
-    // top
     this.planes.push(
-      this.buildFiller(this.edge, this.wall.height, THREE.DoubleSide, this.fillerColor)
+      this.buildFiller(this.edge, this.wall.height, THREE.DoubleSide, Edge.themeFillerColor)
     )
 
-    // sides
     this.planes.push(
       this.buildSideFillter(
         this.edge.interiorStart(),
         this.edge.exteriorStart(),
         this.wall.height,
-        this.sideColor
+        Edge.themeSideColor
       )
     )
 
@@ -223,7 +229,7 @@ export class Edge {
         this.edge.interiorEnd(),
         this.edge.exteriorEnd(),
         this.wall.height,
-        this.sideColor
+        Edge.themeSideColor
       )
     )
   }

@@ -47,6 +47,41 @@ export class Room {
     this.generatePlane()
   }
 
+  public getCentroid(): { x: number; y: number } {
+    const n = this.interiorCorners.length
+    if (n === 0) return { x: 0, y: 0 }
+    let cx = 0
+    let cy = 0
+    let signedArea = 0
+    for (let i = 0; i < n; i++) {
+      const j = (i + 1) % n
+      const cross = this.interiorCorners[i].x * this.interiorCorners[j].y
+        - this.interiorCorners[j].x * this.interiorCorners[i].y
+      cx += (this.interiorCorners[i].x + this.interiorCorners[j].x) * cross
+      cy += (this.interiorCorners[i].y + this.interiorCorners[j].y) * cross
+      signedArea += cross
+    }
+    signedArea *= 0.5
+    if (Math.abs(signedArea) < 1e-6) {
+      let sumX = 0, sumY = 0
+      for (const c of this.interiorCorners) { sumX += c.x; sumY += c.y }
+      return { x: sumX / n, y: sumY / n }
+    }
+    const factor = 1 / (6 * signedArea)
+    return { x: cx * factor, y: cy * factor }
+  }
+
+  public getArea(): number {
+    let area = 0
+    const n = this.interiorCorners.length
+    for (let i = 0; i < n; i++) {
+      const j = (i + 1) % n
+      area += this.interiorCorners[i].x * this.interiorCorners[j].y
+      area -= this.interiorCorners[j].x * this.interiorCorners[i].y
+    }
+    return Math.abs(area) / 2
+  }
+
   public getUuid(): string {
     const cornerUuids = Utils.map(this.corners, function (c) {
       return c.id

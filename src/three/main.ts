@@ -7,6 +7,7 @@ import { Lights } from './lights'
 import { Skybox } from './skybox'
 import { Controls } from './controls'
 import { HUD } from './hud'
+import { LIGHT_3D_THEME, DARK_3D_THEME } from './scene_theme'
 import type { Model } from '../model/model'
 import type { Scene } from '../model/scene'
 import type { Item } from '../items/item'
@@ -45,8 +46,9 @@ export class Main {
   public camera!: THREE.PerspectiveCamera
   public renderer!: THREE.WebGLRenderer
   private controller!: Controller
-  // @ts-ignore - floorplan is declared but not used, keeping for future use
   private floorplan!: FloorplanThree
+  private lights!: Lights
+  private skybox!: Skybox
   private _needsUpdate = false
   private lastRender = Date.now()
   private mouseOver = false
@@ -99,10 +101,8 @@ export class Main {
     // Fix color space for proper color saturation (matching legacy behavior)
     this.renderer.outputColorSpace = THREE.SRGBColorSpace
 
-    // Get skybox colors from CSS variables (if available)
     const { topColor, bottomColor } = this.getSkyboxColors()
-    // @ts-ignore - Item is imported but not used, keeping for future use
-    const skybox = new Skybox(this.scene.getScene(), topColor, bottomColor)
+    this.skybox = new Skybox(this.scene.getScene(), topColor, bottomColor)
 
     this.controls = new Controls(this.camera, this.domElement, this.options.enableWheelZoom)
 
@@ -129,8 +129,7 @@ export class Main {
     this.centerCamera()
     this.model.floorplan.fireOnUpdatedRooms(this.centerCamera.bind(this))
 
-    // @ts-ignore - Item is imported but not used, keeping for future use
-    const lights = new Lights(this.scene.getScene(), this.model.floorplan)
+    this.lights = new Lights(this.scene.getScene(), this.model.floorplan)
 
     this.floorplan = new FloorplanThree(this.scene.getScene(), this.model.floorplan, this.controls, this.renderer)
 
@@ -234,9 +233,7 @@ export class Main {
   }
 
   private spin(): void {
-    // If alwaysSpin is enabled, spin continuously regardless of user interaction
-    const shouldSpin = this.options.spin && (this.options.alwaysSpin || (!this.mouseOver && !this.hasClicked))
-
+    const shouldSpin = this.options.spin && (this.options.alwaysSpin || !this.hasClicked)
     if (shouldSpin) {
       const theta = 2 * Math.PI * this.options.spinSpeed * (Date.now() - this.lastRender)
       this.controls.rotateLeft(theta)
@@ -274,6 +271,18 @@ export class Main {
   }
 
   public needsUpdate(): void {
+    this._needsUpdate = true
+  }
+
+  public setControllerMode(mode: 'move' | 'draw' | 'delete'): void {
+    this.controller.setMode(mode)
+  }
+
+  public set3DTheme(isLight: boolean): void {
+    const theme = isLight ? LIGHT_3D_THEME : DARK_3D_THEME
+    this.skybox.setColors(theme.skyboxTop, theme.skyboxBottom)
+    this.lights.setTheme(theme)
+    this.floorplan.setTheme(theme)
     this._needsUpdate = true
   }
 

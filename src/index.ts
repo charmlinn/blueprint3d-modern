@@ -38,6 +38,7 @@ export { FloorplanThree } from './three/floorplan'
 export { HUD } from './three/hud'
 export { Lights } from './three/lights'
 export { Skybox } from './three/skybox'
+export { type Scene3DTheme, LIGHT_3D_THEME, DARK_3D_THEME } from './three/scene_theme'
 
 // Floorplanner modules
 export { Floorplanner } from './floorplanner/floorplanner'

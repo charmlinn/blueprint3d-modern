@@ -38,6 +38,10 @@ export class Controller {
   private mouseMoved = false // has mouse moved since down click
   private rotateMouseOver = false
   private state = ControllerState.UNSELECTED
+  private mode: 'move' | 'draw' | 'delete' = 'move'
+  private raycaster = new THREE.Raycaster()
+
+  private boundKeyDownEvent: (e: KeyboardEvent) => void = () => {}
 
   // Touch support
   private touchActive = false
@@ -78,9 +82,33 @@ export class Controller {
 
     this.mouse = new THREE.Vector2()
 
+    this.boundKeyDownEvent = this.keyDownEvent.bind(this)
+    document.addEventListener('keydown', this.boundKeyDownEvent)
+
     this.scene.itemRemovedCallbacks.add(this.itemRemoved.bind(this))
     this.scene.itemLoadedCallbacks.add(this.itemLoaded.bind(this))
     this.setGroundPlane()
+  }
+
+  public dispose(): void {
+    document.removeEventListener('keydown', this.boundKeyDownEvent)
+  }
+
+  public setMode(mode: 'move' | 'draw' | 'delete'): void {
+    this.mode = mode
+    this.element.style.cursor = mode === 'delete' ? 'crosshair' : 'auto'
+  }
+
+  private keyDownEvent(event: KeyboardEvent): void {
+    if (!this.enabled) return
+    const tag = (event.target as HTMLElement)?.tagName
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || (event.target as HTMLElement)?.isContentEditable) return
+    if (event.key === 'Delete' || event.key === 'Backspace') {
+      if (this.selectedObject && !this.selectedObject.fixed) {
+        event.preventDefault()
+        this.selectedObject.removeFromScene()
+      }
+    }
   }
 
   // invoked via callback when item is loaded
@@ -201,6 +229,10 @@ export class Controller {
 
       switch (this.state) {
         case ControllerState.SELECTED:
+          if (this.mode === 'delete' && this.intersectedObject !== null) {
+            this.intersectedObject.removeFromScene()
+            break
+          }
           if (this.rotateMouseOver) {
             this.switchState(ControllerState.ROTATING)
           } else if (this.intersectedObject !== null) {
@@ -212,6 +244,10 @@ export class Controller {
           break
         case ControllerState.UNSELECTED:
           if (this.intersectedObject !== null) {
+            if (this.mode === 'delete') {
+              this.intersectedObject.removeFromScene()
+              break
+            }
             this.setSelectedObject(this.intersectedObject)
             if (!this.intersectedObject.fixed) {
               this.switchState(ControllerState.DRAGGING)
@@ -399,14 +435,14 @@ export class Controller {
     const _linePrecision = linePrecision ?? 20
 
     const direction = vector.sub(this.camera.position).normalize()
-    const raycaster = new THREE.Raycaster(this.camera.position, direction)
-    raycaster.params.Line.threshold = _linePrecision
+    this.raycaster.set(this.camera.position, direction)
+    this.raycaster.params.Line.threshold = _linePrecision
 
     let intersections: THREE.Intersection[]
     if (objects instanceof Array) {
-      intersections = raycaster.intersectObjects(objects, _recursive)
+      intersections = this.raycaster.intersectObjects(objects, _recursive)
     } else {
-      intersections = raycaster.intersectObject(objects, _recursive)
+      intersections = this.raycaster.intersectObject(objects, _recursive)
     }
 
     // filter by visible, if true
@@ -473,12 +509,12 @@ export class Controller {
       } else {
         this.mouseoverObject = this.intersectedObject
         this.mouseoverObject.mouseOver()
-        this.three.setCursorStyle('pointer')
+        this.three.setCursorStyle(this.mode === 'delete' ? 'crosshair' : 'pointer')
         this.needsUpdate = true
       }
     } else if (this.mouseoverObject !== null) {
       this.mouseoverObject.mouseOff()
-      this.three.setCursorStyle('auto')
+      this.three.setCursorStyle(this.mode === 'delete' ? 'crosshair' : 'auto')
       this.mouseoverObject = null
       this.needsUpdate = true
     }
@@ -522,16 +558,19 @@ export class Controller {
 
       switch (this.state) {
         case ControllerState.SELECTED:
+          if (this.mode === 'delete' && this.intersectedObject !== null) {
+            this.intersectedObject.removeFromScene()
+            event.preventDefault()
+            break
+          }
           if (this.rotateMouseOver) {
             this.switchState(ControllerState.ROTATING)
-            // Prevent camera controls when rotating object
             event.preventDefault()
             event.stopPropagation()
           } else if (this.intersectedObject !== null) {
             this.setSelectedObject(this.intersectedObject)
             if (!this.intersectedObject.fixed) {
               this.switchState(ControllerState.DRAGGING)
-              // Prevent camera controls when dragging object
               event.preventDefault()
               event.stopPropagation()
             }
@@ -539,10 +578,14 @@ export class Controller {
           break
         case ControllerState.UNSELECTED:
           if (this.intersectedObject !== null) {
+            if (this.mode === 'delete') {
+              this.intersectedObject.removeFromScene()
+              event.preventDefault()
+              break
+            }
             this.setSelectedObject(this.intersectedObject)
             if (!this.intersectedObject.fixed) {
               this.switchState(ControllerState.DRAGGING)
-              // Prevent camera controls when dragging object
               event.preventDefault()
               event.stopPropagation()
             }

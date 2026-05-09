@@ -1,4 +1,4 @@
-import { dimInch } from './dimensioning'
+import { dimCentiMeter } from './dimensioning'
 
 // GENERAL:
 
@@ -22,7 +22,7 @@ export const configSnapToWallDistance = 'snapToWallDistance'
 export class Configuration {
   /** Configuration data loaded from/stored to extern. */
   private static data: { [key: string]: any } = {
-    dimUnit: dimInch,
+    dimUnit: dimCentiMeter,
 
     wallHeight: 250,
     wallThickness: 10,
