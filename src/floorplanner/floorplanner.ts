@@ -49,6 +49,15 @@ export class Floorplanner {
   /** */
   private view: FloorplannerView
 
+  private mousedownHandler: () => void
+  private mousemoveHandler: (e: MouseEvent) => void
+  private mouseupHandler: () => void
+  private mouseleaveHandler: () => void
+  private keyupHandler: (e: KeyboardEvent) => void
+  private roomLoadedHandler: () => void
+
+  private _3dUpdateScheduled = false
+
   /** */
   private mouseDown = false
 
@@ -113,28 +122,30 @@ export class Floorplanner {
 
     this.setMode(floorplannerModes.MOVE)
 
-    this.canvasElement.addEventListener('mousedown', () => {
-      this.mousedown()
-    })
-    this.canvasElement.addEventListener('mousemove', (event: MouseEvent) => {
-      this.mousemove(event)
-    })
-    this.canvasElement.addEventListener('mouseup', () => {
-      this.mouseup()
-    })
-    this.canvasElement.addEventListener('mouseleave', () => {
-      this.mouseleave()
-    })
+    this.mousedownHandler = () => this.mousedown()
+    this.mousemoveHandler = (event: MouseEvent) => this.mousemove(event)
+    this.mouseupHandler = () => this.mouseup()
+    this.mouseleaveHandler = () => this.mouseleave()
+    this.keyupHandler = (e: KeyboardEvent) => { if (e.keyCode == 27) this.escapeKey() }
 
-    document.addEventListener('keyup', (e: KeyboardEvent) => {
-      if (e.keyCode == 27) {
-        this.escapeKey()
-      }
-    })
+    this.canvasElement.addEventListener('mousedown', this.mousedownHandler)
+    this.canvasElement.addEventListener('mousemove', this.mousemoveHandler)
+    this.canvasElement.addEventListener('mouseup', this.mouseupHandler)
+    this.canvasElement.addEventListener('mouseleave', this.mouseleaveHandler)
+    document.addEventListener('keyup', this.keyupHandler)
 
-    floorplan.roomLoadedCallbacks.add(() => {
-      this.reset()
-    })
+    this.roomLoadedHandler = () => this.reset()
+    floorplan.roomLoadedCallbacks.add(this.roomLoadedHandler)
+  }
+
+  public destroy(): void {
+    this.view.destroy()
+    this.canvasElement.removeEventListener('mousedown', this.mousedownHandler)
+    this.canvasElement.removeEventListener('mousemove', this.mousemoveHandler)
+    this.canvasElement.removeEventListener('mouseup', this.mouseupHandler)
+    this.canvasElement.removeEventListener('mouseleave', this.mouseleaveHandler)
+    document.removeEventListener('keyup', this.keyupHandler)
+    this.floorplan.roomLoadedCallbacks.remove(this.roomLoadedHandler)
   }
 
   /** */
@@ -249,6 +260,13 @@ export class Floorplanner {
         this.lastY = this.rawMouseY
       }
       this.view.draw()
+      if (!this._3dUpdateScheduled) {
+        this._3dUpdateScheduled = true
+        requestAnimationFrame(() => {
+          this._3dUpdateScheduled = false
+          this.floorplan.update()
+        })
+      }
     }
   }
 
@@ -313,5 +331,17 @@ export class Floorplanner {
   /** Convert from THREEjs coords to canvas coords. */
   public convertY(y: number): number {
     return (y - this.originY * this.cmPerPixel) * this.pixelsPerCm
+  }
+
+  public draw(): void {
+    this.view.draw()
+  }
+
+  public updateItemRects(rects: Array<{x: number, z: number, w: number, d: number, angle: number, name: string}>): void {
+    this.view.updateItemRects(rects)
+  }
+
+  public setTheme(isLight: boolean): void {
+    this.view.setTheme(isLight)
   }
 }

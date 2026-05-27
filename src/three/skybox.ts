@@ -8,6 +8,7 @@ export class Skybox {
   private readonly sphereRadius = 4000
   private readonly widthSegments = 32
   private readonly heightSegments = 15
+  private uniforms!: { topColor: { value: THREE.Color }; bottomColor: { value: THREE.Color } }
 
   private readonly vertexShader = [
     'varying vec3 vWorldPosition;',
@@ -41,6 +42,11 @@ export class Skybox {
     this.init()
   }
 
+  public setColors(top: number, bottom: number): void {
+    this.uniforms.topColor.value.setHex(top)
+    this.uniforms.bottomColor.value.setHex(bottom)
+  }
+
   private init(): void {
     const uniforms = {
       topColor: {
@@ -56,6 +62,8 @@ export class Skybox {
         value: this.verticalOffset
       }
     }
+
+    this.uniforms = uniforms as any
 
     const skyGeo = new THREE.SphereGeometry(
       this.sphereRadius,

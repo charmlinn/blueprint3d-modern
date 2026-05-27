@@ -3,6 +3,7 @@ import { Floor } from './floor'
 import { Edge } from './edge'
 import type { Floorplan as FloorplanModel } from '../model/floorplan'
 import type { Controls } from './controls'
+import type { Scene3DTheme } from './scene_theme'
 
 export class FloorplanThree {
   public readonly scene: THREE.Scene
@@ -45,5 +46,16 @@ export class FloorplanThree {
       const threeEdge = new Edge(this.scene, edge, this.controls, this.renderer)
       this.edges.push(threeEdge)
     })
+  }
+
+  public setTheme(theme: Scene3DTheme): void {
+    Edge.setTheme(theme)
+    this.edges.forEach(e => e.remove())
+    this.edges = []
+    this.floorplan.wallEdges().forEach(edge => {
+      this.edges.push(new Edge(this.scene, edge, this.controls, this.renderer))
+    })
+    this.floors.forEach(f => f.setTheme(theme));
+    (this.scene as any).needsUpdate = true
   }
 }

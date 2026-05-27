@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import type { Floorplan } from '../model/floorplan'
+import type { Scene3DTheme } from './scene_theme'
 
 export class Lights {
   private readonly scene: THREE.Scene
@@ -7,6 +8,7 @@ export class Lights {
   private readonly tol = 1
   private readonly height = 300 // TODO: share with Blueprint.Wall
   private dirLight!: THREE.DirectionalLight
+  private hemiLight!: THREE.HemisphereLight
 
   constructor(scene: THREE.Scene, floorplan: Floorplan) {
     this.scene = scene
@@ -19,14 +21,11 @@ export class Lights {
   }
 
   private init(): void {
-    // Increased intensity for Three.js r181 physically correct rendering
-    const light = new THREE.HemisphereLight(0xffffff, 0x888888, 3.0)
-    light.position.set(0, this.height, 0)
-    this.scene.add(light)
+    this.hemiLight = new THREE.HemisphereLight(0xffffff, 0x888888, 3.0)
+    this.hemiLight.position.set(0, this.height, 0)
+    this.scene.add(this.hemiLight)
 
-    // Fixed: Set intensity to 0.5 instead of 0 (was causing items to be invisible)
     this.dirLight = new THREE.DirectionalLight(0xffffff, 0.5)
-    this.dirLight.color.setHSL(1, 1, 0.1)
 
     this.dirLight.castShadow = true
 
@@ -45,6 +44,14 @@ export class Lights {
     this.scene.add(this.dirLight.target)
 
     this.floorplan.fireOnUpdatedRooms(this.updateShadowCamera.bind(this))
+  }
+
+  public setTheme(theme: Scene3DTheme): void {
+    this.hemiLight.color.setHex(theme.hemisphereSky)
+    this.hemiLight.groundColor.setHex(theme.hemisphereGround)
+    this.hemiLight.intensity = theme.hemisphereIntensity
+    this.dirLight.color.setHex(theme.directionalColor)
+    this.dirLight.intensity = theme.directionalIntensity
   }
 
   private updateShadowCamera(): void {

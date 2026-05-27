@@ -1,67 +1,76 @@
 {
   "floorplan": {
     "corners": {
-      "f90da5e3-9e0e-eba7-173d-eb0b071e838e": { "x": 204.85099999999989, "y": 289.052 },
-      "da026c08-d76a-a944-8e7b-096b752da9ed": { "x": 672.2109999999999, "y": 289.052 },
-      "4e3d65cb-54c0-0681-28bf-bddcc7bdb571": { "x": 672.2109999999999, "y": -178.308 },
-      "71d4f128-ae80-3d58-9bd2-711c6ce6cdf2": { "x": 204.85099999999989, "y": -178.308 }
+      "corner-a": { "x": 0, "y": 0 },
+      "corner-b": { "x": 600, "y": 0 },
+      "corner-c": { "x": 1050, "y": 0 },
+      "corner-d": { "x": 0, "y": -500 },
+      "corner-e": { "x": 600, "y": -500 },
+      "corner-f": { "x": 1050, "y": -500 },
+      "corner-g": { "x": 0, "y": -850 },
+      "corner-h": { "x": 600, "y": -850 },
+      "corner-i": { "x": 1050, "y": -850 }
     },
     "walls": [
       {
-        "corner1": "71d4f128-ae80-3d58-9bd2-711c6ce6cdf2",
-        "corner2": "f90da5e3-9e0e-eba7-173d-eb0b071e838e",
-        "frontTexture": {
-          "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "backTexture": {
-          "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        }
+        "corner1": "corner-a", "corner2": "corner-b",
+        "frontTexture": { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 },
+        "backTexture":  { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 }
       },
       {
-        "corner1": "f90da5e3-9e0e-eba7-173d-eb0b071e838e",
-        "corner2": "da026c08-d76a-a944-8e7b-096b752da9ed",
-        "frontTexture": {
-          "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "backTexture": {
-          "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        }
+        "corner1": "corner-b", "corner2": "corner-c",
+        "frontTexture": { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 },
+        "backTexture":  { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 }
       },
       {
-        "corner1": "da026c08-d76a-a944-8e7b-096b752da9ed",
-        "corner2": "4e3d65cb-54c0-0681-28bf-bddcc7bdb571",
-        "frontTexture": {
-          "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "backTexture": {
-          "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        }
+        "corner1": "corner-c", "corner2": "corner-f",
+        "frontTexture": { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 },
+        "backTexture":  { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 }
       },
       {
-        "corner1": "4e3d65cb-54c0-0681-28bf-bddcc7bdb571",
-        "corner2": "71d4f128-ae80-3d58-9bd2-711c6ce6cdf2",
-        "frontTexture": {
-          "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        },
-        "backTexture": {
-          "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png",
-          "stretch": true,
-          "scale": 0
-        }
+        "corner1": "corner-f", "corner2": "corner-i",
+        "frontTexture": { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 },
+        "backTexture":  { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 }
+      },
+      {
+        "corner1": "corner-i", "corner2": "corner-h",
+        "frontTexture": { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 },
+        "backTexture":  { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 }
+      },
+      {
+        "corner1": "corner-h", "corner2": "corner-g",
+        "frontTexture": { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 },
+        "backTexture":  { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 }
+      },
+      {
+        "corner1": "corner-g", "corner2": "corner-d",
+        "frontTexture": { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 },
+        "backTexture":  { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 }
+      },
+      {
+        "corner1": "corner-d", "corner2": "corner-a",
+        "frontTexture": { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 },
+        "backTexture":  { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 }
+      },
+      {
+        "corner1": "corner-b", "corner2": "corner-e",
+        "frontTexture": { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 },
+        "backTexture":  { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 }
+      },
+      {
+        "corner1": "corner-e", "corner2": "corner-h",
+        "frontTexture": { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 },
+        "backTexture":  { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 }
+      },
+      {
+        "corner1": "corner-d", "corner2": "corner-e",
+        "frontTexture": { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 },
+        "backTexture":  { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 }
+      },
+      {
+        "corner1": "corner-e", "corner2": "corner-f",
+        "frontTexture": { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 },
+        "backTexture":  { "url": "https://cdn-images.lumenfeng.com/models-cover/wallmap.png", "stretch": true, "scale": 0 }
       }
     ],
     "wallTextures": [],

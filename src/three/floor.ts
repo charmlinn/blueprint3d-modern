@@ -1,11 +1,13 @@
 import * as THREE from 'three'
 import type { Room } from '../model/room'
+import type { Scene3DTheme } from './scene_theme'
 
 export class Floor {
   public readonly room: Room
   private readonly scene: THREE.Scene
   private readonly renderer: THREE.WebGLRenderer
   private floorPlane: THREE.Mesh | null = null
+  private floorMaterial: THREE.MeshPhongMaterial | null = null
   // @ts-ignore - roofPlane is declared but not used, keeping for future use
   private roofPlane: THREE.Mesh | null = null
 
@@ -63,6 +65,7 @@ export class Floor {
 
     const geometry = new THREE.ShapeGeometry(shape)
 
+    this.floorMaterial = floorMaterialTop
     const floor = new THREE.Mesh(geometry, floorMaterialTop)
 
     floor.rotation.set(Math.PI / 2, 0, 0)
@@ -70,6 +73,14 @@ export class Floor {
     floor.receiveShadow = true
     floor.castShadow = false
     return floor
+  }
+
+  public setTheme(theme: Scene3DTheme): void {
+    if (this.floorMaterial) {
+      this.floorMaterial.color.setHex(theme.floorColor)
+      this.floorMaterial.specular.setHex(theme.floorSpecular)
+      this.floorMaterial.needsUpdate = true
+    }
   }
 
   // @ts-ignore - buildRoof is declared but not used, keeping for future use
