@@ -17,8 +17,7 @@
     "paths": {
       "@/*": ["./*"],
       "@blueprint3d/*": ["../src/*"],
-      "three": ["./node_modules/@types/three/index.d.ts"],
-      "three/*": ["./node_modules/@types/three/*"],
+
       "animejs": ["./node_modules/animejs"],
       "animejs/*": ["./node_modules/animejs/*"]
     }

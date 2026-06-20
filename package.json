@@ -5,11 +5,11 @@
   "license": "MIT",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "cd app && pnpm dev",
+    "dev": "cd app && npm run dev",
     "dev:nextjs": "cd app && next dev --turbopack",
-    "build": "pnpm install && cd app && pnpm install && pnpm run build",
-    "build:nextjs": "cd app && next build",
-    "start": "cd app && next start",
+    "build": "cd app && npm ci && npm run build",
+    "build:nextjs": "cd app && npm run build",
+    "start": "cd app && npm run start",
     "start:nextjs": "cd app && next start",
     "ts": "tsc --noEmit"
   },
