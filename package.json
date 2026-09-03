@@ -6,7 +6,7 @@
   "main": "src/index.ts",
   "scripts": {
     "dev": "cd app && pnpm dev",
-    "dev:nextjs": "cd app && next dev --turbopack",
+    "dev:nextjs": "cd app && next dev",
     "build": "pnpm install && cd app && pnpm install && pnpm run build",
     "build:nextjs": "cd app && next build",
     "start": "cd app && next start",
